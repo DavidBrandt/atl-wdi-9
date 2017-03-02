@@ -26,23 +26,27 @@ window.onload = function() {
 
   body.addEventListener('click', bullseyeGame.miss);
   ring1.addEventListener('click', bullseyeGame.outerRing)
+  ring2.addEventListener('click', bullseyeGame.middleRing)
+  ring3.addEventListener('click', bullseyeGame.bullseye)
 }
 
+var ring1 = document.querySelector('.ring-1');
+var ring2 = document.querySelector('.ring-2');
+var ring3 = document.querySelector('.ring-3');
 
 var bullseyeGame = {
   score: 0,
-
+// Below we establish the function with a single parameter ('points').
   updateScore: function(points) {
     var scoreElement = document.querySelector('.score');
     this.score += points
-
+// This function above adds points every time a player clicks on a particular ring.
     scoreElement.innerHTML = `${this.score} points`
   },
-
+// With each score, the above selector outputs the total score below the gameboard.
   miss: function(event) {
     event.stopPropagation();
     alert('YOU MISSED');
-
     bullseyeGame.updateScore(0);
     // [ALERT:] needs to be bullseyeGame because this in clickEvents refers to the html
     // element that was clicked
@@ -50,6 +54,22 @@ var bullseyeGame = {
 
   outerRing: function(event) {
     event.stopPropagation();
-    alert('outerRing was clicked')
-  }
+    bullseyeGame.updateScore(10);
+    ring1.style.background = 'yellow';
+    alert('You got 10 points. Try harder.')
+  },
+
+  middleRing: function(event) {
+    event.stopPropagation();
+    bullseyeGame.updateScore(50);
+    ring2.style.background = 'yellow';
+    alert('You got 50 points!')
+  },
+
+  bullseye: function(event) {
+    event.stopPropagation();
+    bullseyeGame.updateScore(100);
+    ring3.style.background = 'yellow';
+    alert('Bullseye!')
+  },
 }
