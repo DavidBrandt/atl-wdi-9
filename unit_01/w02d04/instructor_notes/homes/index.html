@@ -8,9 +8,10 @@
 </head>
 <body class="container">
 
-    <h1 class="jumbotron">Lake Arrowhead Homes For Sale</h1>
+    <h1 id="header" class="jumbotron text-center">Lake Arrowhead Homes For Sale</h1>
 
     <table id="homes" class="table">
+ <!-- thead is the names of the columns -->
         <thead>
             <tr>
                 <th>Address</th>
@@ -21,8 +22,9 @@
                 <th></th>
             </tr>
         </thead>
+ <!-- tbody is each home -->
         <tbody>
-            <tr>
+            <tr class="home-row">
                 <td>27374 Matterhorn Drive</td>
                 <td>1,664</td>
                 <td>3</td>
@@ -30,7 +32,7 @@
                 <td>$279,500</td>
                 <td><button class="btn btn-xs btn-danger">Remove</button></td>
             </tr>
-            <tr>
+            <tr class="home-row">
                 <td>243 El Dorado</td>
                 <td>4,900</td>
                 <td>6</td>
@@ -38,7 +40,7 @@
                 <td>$990,000</td>
                 <td><button class="btn btn-xs btn-danger">Remove</button></td>
             </tr>
-            <tr>
+            <tr class="home-row">
                 <td>1228 Klondike Drive</td>
                 <td>2,158</td>
                 <td>4</td>
